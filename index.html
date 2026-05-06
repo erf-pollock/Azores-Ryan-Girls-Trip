@@ -433,14 +433,16 @@
     color: var(--green);
     margin-bottom: 12px;
   }
-  .pack-col ul { list-style: none; }
-  .pack-col ul li {
+  .pack-col ul, .pack-list { list-style: none; margin: 0; padding: 0; }
+  .pack-col ul li, .pack-item {
+    list-style: none;
     font-size: 14px;
     padding: 7px 0;
     border-bottom: 1px solid var(--border);
     display: flex; align-items: center; gap: 8px;
   }
-  .pack-col ul li:last-child { border-bottom: none; }
+  .pack-col ul li::before, .pack-item::before { display: none; content: none; }
+  .pack-col ul li:last-child, .pack-item-last { border-bottom: none; }
   .pack-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-light); flex-shrink: 0; }
 
   /* FOOTER */
@@ -1148,33 +1150,33 @@
     <div class="pack-grid">
       <div class="pack-col">
         <h3>Essentials</h3>
-        <ul>
-          <li><div class="pack-dot"></div>Dark or old swimsuit (hot springs!)</li>
-          <li><div class="pack-dot"></div>Regular swimsuit for ocean / pool</li>
-          <li><div class="pack-dot"></div>Packable rain jacket</li>
-          <li><div class="pack-dot"></div>Sturdy walking shoes or trail runners</li>
-          <li><div class="pack-dot"></div>Comfortable sandals</li>
-          <li><div class="pack-dot"></div>Layers (mornings + mountains are cool)</li>
-          <li><div class="pack-dot"></div>Sunscreen and sunglasses</li>
-          <li><div class="pack-dot"></div>Cash in euros</li>
-          <li><div class="pack-dot"></div>Small day pack for hikes</li>
-          <li><div class="pack-dot"></div>Reusable water bottle</li>
-        </ul>
+        <div class="pack-list">
+          <div class="pack-item"><div class="pack-dot"></div>Dark or old swimsuit (hot springs!)</div>
+          <div class="pack-item"><div class="pack-dot"></div>Regular swimsuit for ocean / pool</div>
+          <div class="pack-item"><div class="pack-dot"></div>Packable rain jacket</div>
+          <div class="pack-item"><div class="pack-dot"></div>Sturdy walking shoes or trail runners</div>
+          <div class="pack-item"><div class="pack-dot"></div>Comfortable sandals</div>
+          <div class="pack-item"><div class="pack-dot"></div>Layers (mornings + mountains are cool)</div>
+          <div class="pack-item"><div class="pack-dot"></div>Sunscreen and sunglasses</div>
+          <div class="pack-item"><div class="pack-dot"></div>Cash in euros</div>
+          <div class="pack-item"><div class="pack-dot"></div>Small day pack for hikes</div>
+          <div class="pack-item pack-item-last"><div class="pack-dot"></div>Reusable water bottle</div>
+        </div>
       </div>
       <div class="pack-col">
         <h3>Nice to have</h3>
-        <ul>
-          <li><div class="pack-dot"></div>Azores webcam app (check before drives)</li>
-          <li><div class="pack-dot"></div>Google Translate (some menus are Portuguese-only)</li>
-          <li><div class="pack-dot"></div>Light insect repellent (forests)</div></li>
-          <li><div class="pack-dot"></div>Waterproof bag or dry bag</li>
-          <li><div class="pack-dot"></div>Snacks for long drives</li>
-          <li><div class="pack-dot"></div>Camera / good phone camera</li>
-          <li><div class="pack-dot"></div>Motion sickness medication (for boat days)</li>
-          <li><div class="pack-dot"></div>Ibuprofeno (pharmacies everywhere if needed)</li>
-          <li><div class="pack-dot"></div>Extra memory card / portable charger</li>
-          <li><div class="pack-dot"></div>Travel adapter — Type F plug (see below)</li>
-        </ul>
+        <div class="pack-list">
+          <div class="pack-item"><div class="pack-dot"></div>Azores webcam app (check before drives)</div>
+          <div class="pack-item"><div class="pack-dot"></div>Google Translate (some menus are Portuguese-only)</div>
+          <div class="pack-item"><div class="pack-dot"></div>Light insect repellent (forests)</div>
+          <div class="pack-item"><div class="pack-dot"></div>Waterproof bag or dry bag</div>
+          <div class="pack-item"><div class="pack-dot"></div>Snacks for long drives</div>
+          <div class="pack-item"><div class="pack-dot"></div>Camera / good phone camera</div>
+          <div class="pack-item"><div class="pack-dot"></div>Motion sickness medication (for boat days)</div>
+          <div class="pack-item"><div class="pack-dot"></div>Ibuprofeno (pharmacies everywhere if needed)</div>
+          <div class="pack-item"><div class="pack-dot"></div>Extra memory card / portable charger</div>
+          <div class="pack-item pack-item-last"><div class="pack-dot"></div>Travel adapter — Type F plug (see below)</div>
+        </div>
       </div>
     </div>
     <div class="intro-note" style="margin-top: 24px; display: flex; gap: 14px; align-items: flex-start;">
