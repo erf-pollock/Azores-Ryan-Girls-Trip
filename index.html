@@ -9,16 +9,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --green: #2D6A4F; --green-light: #52B788; --green-pale: #D8F3DC;
-    --ocean: #1B4965; --ocean-light: #5FA8D3;
-    --sand: #F4ECD6; --sand-dark: #E8D5B0;
-    --rust: #C9622F; --text: #1A1A1A; --text-muted: #6B7280;
-    --white: #FAFAF7; --border: rgba(45,106,79,0.15);
+    --green: #2D6A4F;
+    --green-light: #52B788;
+    --green-pale: #D8F3DC;
+    --ocean: #1B4965;
+    --ocean-light: #5FA8D3;
+    --sand: #F4ECD6;
+    --sand-dark: #E8D5B0;
+    --rust: #C9622F;
+    --text: #1A1A1A;
+    --text-muted: #6B7280;
+    --white: #FAFAF7;
+    --border: rgba(45,106,79,0.15);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); font-size: 16px; line-height: 1.7; }
-
-  /* HERO */
   .hero { background: var(--ocean); color: white; padding: 80px 40px 60px; text-align: center; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 20% 80%, rgba(82,183,136,0.25) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 80% 20%, rgba(95,168,211,0.2) 0%, transparent 60%); pointer-events: none; }
   .hero-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-light); margin-bottom: 18px; }
@@ -28,22 +33,16 @@
   .hero-icons { display: flex; justify-content: center; gap: 32px; margin-top: 36px; flex-wrap: wrap; }
   .hero-icon { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; color: rgba(255,255,255,0.7); letter-spacing: 0.05em; }
   .hero-icon span:first-child { font-size: 22px; }
-
-  /* LAYOUT */
   .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
   section { padding: 56px 0; border-bottom: 1px solid var(--border); }
   section:last-child { border-bottom: none; }
   .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 36px); font-weight: 400; line-height: 1.2; margin-bottom: 28px; }
-
-  /* STAT BOXES */
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 36px); font-weight: 400; line-height: 1.2; margin-bottom: 28px; color: var(--text); }
   .intro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 32px; }
   .stat-box { background: var(--sand); border-radius: 12px; padding: 18px 16px; }
   .stat-box .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
-  .stat-box .value { font-size: 18px; font-weight: 500; }
-  .intro-note { background: var(--green-pale); border-left: 3px solid var(--green); padding: 16px 20px; border-radius: 0 10px 10px 0; font-size: 15px; line-height: 1.7; margin-bottom: 16px; }
-
-  /* GEO */
+  .stat-box .value { font-size: 18px; font-weight: 500; color: var(--text); }
+  .intro-note { background: var(--green-pale); border-left: 3px solid var(--green); padding: 16px 20px; border-radius: 0 10px 10px 0; font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 16px; }
   .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
   @media (max-width: 560px) { .geo-grid { grid-template-columns: 1fr; } }
   .geo-card { border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
@@ -53,8 +52,6 @@
   .geo-list li { font-size: 14px; padding: 5px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
   .geo-list li:last-child { border-bottom: none; }
   .geo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-light); flex-shrink: 0; }
-
-  /* CHECKLIST */
   .checklist { display: grid; gap: 10px; }
   .check-item { display: flex; gap: 14px; align-items: flex-start; background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; }
   .check-icon { font-size: 18px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
@@ -62,46 +59,31 @@
   .check-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
   .urgent { border-left: 3px solid var(--rust); }
   .info { border-left: 3px solid var(--green-light); }
-
-  /* TAGS */
-  .tag { font-size: 12px; padding: 3px 10px; border-radius: 100px; border: 1px solid; display: inline-block; }
+  .day-tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 24px; scrollbar-width: none; }
+  .day-tabs::-webkit-scrollbar { display: none; }
+  .day-tab { flex-shrink: 0; padding: 8px 16px; border: 1px solid var(--border); border-radius: 100px; font-size: 13px; cursor: pointer; background: white; color: var(--text-muted); transition: all 0.18s; white-space: nowrap; font-family: 'DM Sans', sans-serif; }
+  .day-tab:hover { border-color: var(--green-light); color: var(--green); }
+  .day-tab.active { background: var(--green); color: white; border-color: var(--green); }
+  .day-panel { display: none; }
+  .day-panel.active { display: block; }
+  .day-card { border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .day-header-bar { padding: 20px 24px; color: white; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 8px; }
+  .day-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; }
+  .day-vibe { font-size: 12px; background: rgba(255,255,255,0.2); border-radius: 100px; padding: 4px 12px; letter-spacing: 0.04em; }
+  .day-body { padding: 0; }
+  .time-row { display: grid; grid-template-columns: 90px 1fr; border-bottom: 1px solid var(--border); }
+  .time-row:last-child { border-bottom: none; }
+  .time-col { padding: 18px 16px; background: var(--sand); border-right: 1px solid var(--border); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); display: flex; align-items: flex-start; padding-top: 20px; }
+  .content-col { padding: 18px 22px; }
+  .content-col p { font-size: 14px; line-height: 1.7; margin-bottom: 8px; }
+  .content-col p:last-child { margin-bottom: 0; }
+  .content-col .tip-inline { font-size: 13px; color: var(--green); background: var(--green-pale); border-radius: 8px; padding: 8px 12px; margin-top: 8px; line-height: 1.5; }
+  .content-col .warn-inline { font-size: 13px; color: #7C3D1F; background: #FEF0E7; border-radius: 8px; padding: 8px 12px; margin-top: 8px; line-height: 1.5; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 22px 18px; border-top: 1px solid var(--border); }
+  .tag { font-size: 12px; padding: 3px 10px; border-radius: 100px; border: 1px solid; }
   .tag-green { color: var(--green); border-color: var(--green-light); background: var(--green-pale); }
   .tag-ocean { color: var(--ocean); border-color: var(--ocean-light); background: #E8F4FD; }
   .tag-rust { color: var(--rust); border-color: #E8956A; background: #FEF0E7; }
-
-  /* ACTIVITY MENU */
-  .filter-row { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 24px; scrollbar-width: none; }
-  .filter-row::-webkit-scrollbar { display: none; }
-  .filt-btn { flex-shrink: 0; padding: 7px 16px; border: 1px solid var(--border); border-radius: 100px; font-size: 13px; cursor: pointer; background: white; color: var(--text-muted); transition: all 0.18s; white-space: nowrap; font-family: 'DM Sans', sans-serif; }
-  .filt-btn:hover { border-color: var(--green-light); color: var(--green); }
-  .filt-btn.on { background: var(--green); color: white; border-color: var(--green); }
-
-  .act-group-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 20px 0 10px; }
-  .act-group-label:first-child { padding-top: 0; }
-
-  .act-cards { display: grid; gap: 10px; }
-  .act-card { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-  .act-card.hide { display: none; }
-
-  .act-head { padding: 14px 18px; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; cursor: pointer; user-select: none; }
-  .act-head:hover { background: rgba(0,0,0,0.02); }
-  .act-head-left { display: flex; gap: 12px; align-items: flex-start; flex: 1; min-width: 0; }
-  .act-emoji { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 3px; }
-  .act-name { font-weight: 500; font-size: 15px; line-height: 1.3; margin-bottom: 2px; }
-  .act-sub { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-  .act-head-right { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; flex-shrink: 0; }
-  .act-chev { font-size: 10px; color: var(--text-muted); transition: transform 0.2s; margin-top: 4px; }
-  .act-card.open .act-chev { transform: rotate(180deg); }
-
-  .act-body { display: none; border-top: 1px solid var(--border); padding: 16px 18px; display: none; gap: 10px; flex-direction: column; }
-  .act-card.open .act-body { display: flex; }
-
-  .act-row { display: grid; grid-template-columns: 88px 1fr; gap: 6px; font-size: 14px; line-height: 1.6; }
-  .act-lbl { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); padding-top: 3px; }
-  .tip-pill { background: var(--green-pale); border-radius: 8px; padding: 9px 13px; font-size: 13px; color: var(--green); line-height: 1.6; }
-  .warn-pill { background: #FEF0E7; border-radius: 8px; padding: 9px 13px; font-size: 13px; color: #7C3D1F; line-height: 1.6; }
-
-  /* SPLIT GRID */
   .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 560px) { .split-grid { grid-template-columns: 1fr; } }
   .split-card { border-radius: 14px; padding: 22px; }
@@ -113,8 +95,6 @@
   .split-card ul li { font-size: 14px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; gap: 8px; line-height: 1.4; }
   .split-card.relaxed ul li { border-bottom-color: var(--border); }
   .split-card ul li:last-child { border-bottom: none; }
-
-  /* FOOD */
   .restaurant-list { display: grid; gap: 10px; }
   .r-card { display: flex; justify-content: space-between; align-items: flex-start; padding: 16px 18px; border: 1px solid var(--border); border-radius: 12px; gap: 16px; }
   .r-name { font-weight: 500; font-size: 15px; margin-bottom: 2px; }
@@ -123,19 +103,16 @@
   .r-badge { display: inline-block; font-size: 11px; padding: 3px 8px; border-radius: 6px; background: var(--sand); color: var(--text-muted); white-space: nowrap; }
   .r-book { color: var(--rust); font-size: 12px; margin-top: 4px; }
   .food-section-label { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 24px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .food-section-label:first-child { margin-top: 0; }
   .food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 16px; }
   .food-item { background: var(--sand); border-radius: 10px; padding: 14px 16px; }
   .food-item .food-name { font-weight: 500; font-size: 14px; margin-bottom: 3px; }
   .food-item .food-note { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
-
-  /* TIPS */
   .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
   .tip-card { border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
   .tip-card .tip-icon { font-size: 20px; margin-bottom: 10px; }
   .tip-card h3 { font-weight: 500; font-size: 15px; margin-bottom: 6px; }
   .tip-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
-
-  /* PACK */
   .pack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 560px) { .pack-grid { grid-template-columns: 1fr; } }
   .pack-col h3 { font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green); margin-bottom: 12px; }
@@ -143,18 +120,9 @@
   .pack-col ul li { font-size: 14px; padding: 7px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
   .pack-col ul li:last-child { border-bottom: none; }
   .pack-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-light); flex-shrink: 0; }
-
-  /* FOOTER */
   .footer { background: var(--ocean); color: rgba(255,255,255,0.7); text-align: center; padding: 40px 24px; font-size: 13px; line-height: 1.8; }
   .footer strong { color: white; }
-
-  @media (max-width: 600px) {
-    .hero { padding: 60px 24px 48px; }
-    .r-card { flex-direction: column; } .r-meta { text-align: left; }
-    .act-row { grid-template-columns: 1fr; gap: 2px; }
-    .act-head { flex-wrap: wrap; }
-    .act-head-right { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; }
-  }
+  @media (max-width: 600px) { .hero { padding: 60px 24px 48px; } .time-row { grid-template-columns: 70px 1fr; } .r-card { flex-direction: column; } .r-meta { text-align: left; } }
 </style>
 </head>
 <body>
@@ -188,7 +156,7 @@
       <div class="stat-box"><div class="label">Weather</div><div class="value">Warm + unpredictable</div></div>
       <div class="stat-box"><div class="label">✈️ Outbound flight</div><div class="value" style="font-size:15px;">S4224 · May 29</div><div style="font-size:12px;color:var(--text-muted);margin-top:3px;">BOS → PDL · Departs 9:15pm<br>Arrives 6:20am May 30 · Terminal E<br>Booking ref: <strong>XZIQUR</strong></div></div>
       <div class="stat-box"><div class="label">✈️ Return flight</div><div class="value" style="font-size:15px;">S4225 · Jun 6</div><div style="font-size:12px;color:var(--text-muted);margin-top:3px;">PDL → BOS · Departs 6:05pm<br>Arrives 7:50pm · Terminal E<br>Last check-in: 5:05pm</div></div>
-      <div class="stat-box" style="grid-column:span 2;"><div class="label">🏡 Our houses</div><div style="display:flex;gap:16px;margin-top:6px;flex-wrap:wrap;"><a href="https://www.vrbo.com/10466217ha" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--ocean);text-decoration:none;background:var(--sand-dark);padding:7px 14px;border-radius:8px;">🏠 Casa do Mar ↗</a><a href="https://www.vrbo.com/4663394" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--ocean);text-decoration:none;background:var(--sand-dark);padding:7px 14px;border-radius:8px;">🏠 Casa da Ilha ↗</a></div></div>
+      <div class="stat-box" style="grid-column: span 2;"><div class="label">🏡 Our houses</div><div style="display:flex;gap:16px;margin-top:6px;flex-wrap:wrap;"><a href="https://www.vrbo.com/10466217ha" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--ocean);text-decoration:none;background:var(--sand-dark);padding:7px 14px;border-radius:8px;">🏠 Casa do Mar <span style="font-size:11px;opacity:0.7;">↗</span></a><a href="https://www.vrbo.com/4663394" target="_blank" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--ocean);text-decoration:none;background:var(--sand-dark);padding:7px 14px;border-radius:8px;">🏠 Casa da Ilha <span style="font-size:11px;opacity:0.7;">↗</span></a></div></div>
     </div>
     <div class="intro-note">São Miguel is known as the "Green Island" — a wild, living landscape of crater lakes, volcanic hot springs, dramatic cliffs, whale-filled Atlantic waters, and endless hydrangea-lined roads. It manages to be simultaneously adventurous and deeply relaxing. There is something here for every single person in this group.</div>
     <div class="intro-note">Our houses are in Ponta Garça, on the south-central coast — a perfect home base. Ponta Delgada (the main city) is 20 min west. Furnas valley is 40 min east. The Vila Franca islet is 5 minutes from our door.</div>
@@ -200,16 +168,16 @@
   <div class="container">
     <div class="section-label">Orientation</div>
     <div class="section-title">East vs. West</div>
-    <p style="color:var(--text-muted);margin-bottom:24px;font-size:15px;">The island splits naturally into two sides.</p>
+    <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 15px;">The island splits naturally into two sides. We've planned dedicated days for each so no one is doubling back.</p>
     <div class="geo-grid">
       <div class="geo-card">
         <h3>⬅ West Side</h3>
         <div class="dist">40–50 min from house</div>
         <ul class="geo-list">
-          <li><div class="geo-dot"></div>Sete Cidades crater lakes</li>
+          <li><div class="geo-dot"></div>Sete Cidades crater lakes (the iconic postcard view)</li>
           <li><div class="geo-dot"></div>Vista do Rei viewpoint</li>
-          <li><div class="geo-dot"></div>Boca do Inferno viewpoint</li>
-          <li><div class="geo-dot"></div>Caldeira Velha hot springs</li>
+          <li><div class="geo-dot"></div>Boca do Inferno viewpoint (short hike)</li>
+          <li><div class="geo-dot"></div>Caldeira Velha hot springs (jungle waterfall)</li>
           <li><div class="geo-dot"></div>Ponta da Ferraria ocean hot spring</li>
           <li><div class="geo-dot"></div>Mosteiros coastline</li>
         </ul>
@@ -236,317 +204,454 @@
     <div class="section-label">Action items</div>
     <div class="section-title">Before we leave</div>
     <div class="checklist">
-      <div class="check-item urgent"><div class="check-icon">🐋</div><div><div class="check-title">Whale watching — ✅ Booked with Futurismo, Monday June 1</div><div class="check-desc">Two boats departing 9:00am from Vila Franca do Campo marina. Catamaran: Paula, MB, Amy & Beth. Zodiac: Kathie, Rachel, Emma, Meg, Casey & Nellie.</div></div></div>
-      <div class="check-item urgent"><div class="check-icon">🍲</div><div><div class="check-title">Reserve Cozido das Furnas</div><div class="check-desc">Book Tony's Restaurante or Caldeiras & Vulcões in Furnas well in advance. Mention party size and dietary restrictions.</div></div></div>
-      <div class="check-item urgent"><div class="check-icon">🍽️</div><div><div class="check-title">Make dinner reservations for group dinners out</div><div class="check-desc">A group of 12 requires advance booking everywhere. A Tasca does NOT take reservations — arrive before 6pm.</div></div></div>
-      <div class="check-item info"><div class="check-icon">🏝️</div><div><div class="check-title">Vila Franca Islet: kayak or boat tour (no swimming yet)</div><div class="check-desc">The islet only opens for swimming on June 15. Book the kayak tour through Epic Volcanic or the zodiac boat tour through Terra Azul or Azores Whale Watch.</div></div></div>
-      <div class="check-item info"><div class="check-icon">🌫️</div><div><div class="check-title">Download an Azores webcam app</div><div class="check-desc">Check Sete Cidades and Lagoa do Fogo webcams every morning before driving. Both can be completely fogged in — swap to a lower-elevation activity and revisit later.</div></div></div>
-      <div class="check-item info"><div class="check-icon">👙</div><div><div class="check-title">Pack dark/old swimsuits for hot springs</div><div class="check-desc">Iron-rich thermal water at Furnas and Caldeira Velha permanently stains light-colored swimwear orange. No exceptions.</div></div></div>
-      <div class="check-item info"><div class="check-icon">💶</div><div><div class="check-title">Bring cash in euros</div><div class="check-desc">Small villages, trail parking, and some local restaurants are cash-only. Stock up at an ATM when you arrive.</div></div></div>
+      <div class="check-item urgent">
+        <div class="check-icon">🐋</div>
+        <div>
+          <div class="check-title">Whale watching — ✅ Booked with Futurismo, Monday June 1</div>
+          <div class="check-desc">Two boats departing 9:00am from Vila Franca do Campo marina. Catamaran: Paula, MB, Amy & Beth. Zodiac: Kathie, Rachel, Emma, Meg, Casey & Nellie.</div>
+        </div>
+      </div>
+      <div class="check-item urgent">
+        <div class="check-icon">🍲</div>
+        <div>
+          <div class="check-title">Reserve Cozido das Furnas for Furnas day</div>
+          <div class="check-desc">This legendary volcanic stew is cooked to order underground and restaurants can run out. Book Tony's Restaurante or Caldeiras & Vulcões in Furnas well in advance. Mention your party size and dietary restrictions.</div>
+        </div>
+      </div>
+      <div class="check-item urgent">
+        <div class="check-icon">🍽️</div>
+        <div>
+          <div class="check-title">Make dinner reservations for group dinners out</div>
+          <div class="check-desc">A group of 12 requires advance booking everywhere. Priority dinners: final night at Tasquinha Vieira or Alcides (Ponta Delgada), and the Sunday dinner after hiking. A Tasca does NOT take reservations — arrive before 6pm.</div>
+        </div>
+      </div>
+      <div class="check-item info">
+        <div class="check-icon">🏝️</div>
+        <div>
+          <div class="check-title">Vila Franca Islet: boat tour only (not swimming)</div>
+          <div class="check-desc">The islet only opens for swimming on June 15 — our trip ends June 6. But guided boat tours around the volcanic crater run year-round and are genuinely spectacular. Book through Terra Azul or Azores Whale Watch. About 1 hour, biologist-guided.</div>
+        </div>
+      </div>
+      <div class="check-item info">
+        <div class="check-icon">🌫️</div>
+        <div>
+          <div class="check-title">Download an Azores webcam app</div>
+          <div class="check-desc">São Miguel weather changes fast. Sete Cidades can go from clear to completely fogged over in minutes. Check the live webcams every morning before driving to viewpoints. Plan B days are built into the itinerary.</div>
+        </div>
+      </div>
+      <div class="check-item info">
+        <div class="check-icon">👙</div>
+        <div>
+          <div class="check-title">Pack dark/old swimsuits for hot springs</div>
+          <div class="check-desc">The iron-rich thermal water at Furnas permanently stains light-colored swimwear orange. This is not a warning to be ignored. Pack old swimsuits or specifically dark ones for hot spring days.</div>
+        </div>
+      </div>
+      <div class="check-item info">
+        <div class="check-icon">💶</div>
+        <div>
+          <div class="check-title">Bring cash in euros</div>
+          <div class="check-desc">Small villages, trail parking, and some local restaurants are cash-only. ATMs are available in Ponta Delgada and Ribeira Grande. Stock up when you arrive.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ACTIVITY MENU -->
+<!-- ITINERARY -->
 <section>
   <div class="container">
-    <div class="section-label">Plug &amp; play</div>
-    <div class="section-title">Activity menu</div>
-    <p style="color:var(--text-muted);font-size:14px;margin-bottom:20px;">Browse and mix-and-match across the week. Tap any card for full details. Use filters to narrow by type.</p>
+    <div class="section-label">Day by day</div>
+    <div class="section-title">The itinerary</div>
 
-    <div style="background:#FEF0E7;border-left:3px solid var(--rust);border-radius:0 10px 10px 0;padding:14px 18px;font-size:14px;margin-bottom:24px;line-height:1.7;">
-      ⚠️ <strong>Weather rule:</strong> Check Sete Cidades and Lagoa do Fogo webcams every morning. Both can be completely fogged in — swap to a lower-elevation activity and revisit in the afternoon when it often clears.
+    <div class="day-tabs" id="tabs">
+      <div class="day-tab active" onclick="showDay('d1', this)">Sat 5/30</div>
+      <div class="day-tab" onclick="showDay('d2', this)">Sun 5/31</div>
+      <div class="day-tab" onclick="showDay('d3', this)">Mon 6/1</div>
+      <div class="day-tab" onclick="showDay('d4', this)">Tue 6/2</div>
+      <div class="day-tab" onclick="showDay('d5', this)">Wed 6/3</div>
+      <div class="day-tab" onclick="showDay('d6', this)">Thu 6/4</div>
+      <div class="day-tab" onclick="showDay('d7', this)">Fri 6/5</div>
+      <div class="day-tab" onclick="showDay('d8', this)">Sat 6/6</div>
     </div>
 
-    <div class="filter-row">
-      <button class="filt-btn on" onclick="doFilter('all',this)">All</button>
-      <button class="filt-btn" onclick="doFilter('morning',this)">☀️ Morning</button>
-      <button class="filt-btn" onclick="doFilter('hike',this)">🥾 Hikes</button>
-      <button class="filt-btn" onclick="doFilter('water',this)">🌊 On the water</button>
-      <button class="filt-btn" onclick="doFilter('springs',this)">♨️ Hot springs</button>
-      <button class="filt-btn" onclick="doFilter('easy',this)">🌿 Low effort</button>
-      <button class="filt-btn" onclick="doFilter('booked',this)">✅ Pre-booked</button>
-      <button class="filt-btn" onclick="doFilter('food',this)">🍽️ Food &amp; drink</button>
+    <!-- DAY 1 -->
+    <div class="day-panel active" id="d1">
+      <div class="day-card">
+        <div class="day-header-bar" style="background: var(--ocean);">
+          <div>
+            <div style="font-size:12px;opacity:0.7;margin-bottom:4px;">Day 1 · Saturday, May 30</div>
+            <div class="day-title">Arrival + Ponta Delgada</div>
+          </div>
+          <div class="day-vibe">Easy arrival day</div>
+        </div>
+        <div class="day-body">
+          <div class="time-row">
+            <div class="time-col">Morning</div>
+            <div class="content-col">
+              <p>Land at João Paulo II Airport (PDL). Pick up the two vans from the rental counter. 10 minutes from the airport into the city center.</p>
+              <p>First stop: coffee and <em>pastéis de nata</em> at a café in Ponta Delgada. Welcome to Portugal!</p>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Afternoon</div>
+            <div class="content-col">
+              <p>Explore Ponta Delgada on foot: walk through the Portas da Cidade (the iconic triple arch), browse the waterfront promenade, peek into the Mercado da Graça. Get a feel for the city.</p>
+              <p>Pineapple plantation visit — Augusto Arruda plantation is just outside Ponta Delgada. A fascinating, tucked-away greenhouse operation. Perfect for a first-day activity: low energy, fascinating, and delicious tastings.</p>
+              <p>Grocery run at Continente or Pingo Doce for house staples.</p>
+              <div class="tip-inline">💡 The Azorean greenhouse pineapple is unlike any pineapple you've had. Each one takes 2 years to grow. Buy a few to bring back to the houses.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Evening</div>
+            <div class="content-col">
+              <p>Drive to houses in Ponta Garça (~20 min from Ponta Delgada). Check in, unpack, take in the view. Dinner at the house — keep it simple. Early night; it's been a travel day.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag tag-green">Easy day</span>
+          <span class="tag tag-ocean">No bookings needed</span>
+          <span class="tag tag-green">Perfect for jet lag</span>
+        </div>
+      </div>
     </div>
 
-    <div class="act-cards" id="actCards">
-
-      <!-- GROUP LABELS are plain divs, not cards -->
-      <div class="act-group-label" data-group="booked" style="color:var(--rust);">✅ Fixed — already booked</div>
-
-      <div class="act-card" data-tags="booked water morning">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🐋</div><div><div class="act-name">Whale Watching — Futurismo Azores Adventures</div><div class="act-sub">Two boats · Vila Franca do Campo marina · Mon 6/1 · 9:00am</div></div></div>
-          <div class="act-head-right"><span class="tag tag-rust">✅ Booked</span><span class="tag tag-ocean">9:00am</span><div class="act-chev">▼</div></div>
+    <!-- DAY 2 -->
+    <div class="day-panel" id="d2">
+      <div class="day-card">
+        <div class="day-header-bar" style="background: #2D6A4F;">
+          <div>
+            <div style="font-size:12px;opacity:0.7;margin-bottom:4px;">Day 2 · Sunday, May 31</div>
+            <div class="day-title">Lagoa do Fogo + Pico da Barrosa + Caldeira Velha</div>
+          </div>
+          <div class="day-vibe">The island's most beautiful interior</div>
         </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Who</div><div>🚢 <strong>Catamaran:</strong> Paula, MB, Amy & Beth &nbsp;·&nbsp; 🚤 <strong>Zodiac:</strong> Kathie, Rachel, Emma, Meg, Casey & Nellie</div></div>
-          <div class="act-row"><div class="act-lbl">Duration</div><div>~3 hours · back by noon</div></div>
-          <div class="act-row"><div class="act-lbl">Expect</div><div>Sperm whales, bottlenose & common dolphins, possibly blue whales. Land-based spotters locate animals before boats depart — very high success rate.</div></div>
-          <div class="tip-pill">💡 Zodiac riders: light breakfast, wear layers, expect to get splashed. Motion sickness meds 30–60 min before boarding if prone.</div>
+        <div class="day-body">
+          <div class="time-row">
+            <div class="time-col">Early AM</div>
+            <div class="content-col">
+              <p>Leave by <strong>7:30–8:00am</strong>. Drive ~20 min to the center of the island. Check the webcam before leaving — Lagoa do Fogo sits high in the caldera and can be socked in by 10am.</p>
+              <div class="warn-inline">⚠️ Fog warning: if the crater is in cloud, start with Caldeira Velha instead (lower elevation, usually clear) and return to Lagoa do Fogo mid-afternoon when it often clears.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Morning</div>
+            <div class="content-col">
+              <p><strong>Lagoa do Fogo — "Lake of Fire"</strong> — the hike you don't want to miss. A turquoise volcanic crater lake in the island's interior, surrounded by dense jungle and lava channels. The trail (PRC03 SMI) winds through endemic forest before the lake opens up below you in a way that stops you in your tracks. Arguably the most beautiful single view on São Miguel — and just 20 minutes from the house.</p>
+              <p>Trail stats: 6.8 mi · ~520m (1,706 ft) gain · Moderate · ~3.5–4 hrs round trip.</p>
+              <div class="tip-inline">💡 Relaxed group: the <strong>Miradouro da Lagoa do Fogo</strong> viewpoint is accessible by car and looks directly into the crater — zero elevation, completely stunning. You can also descend to the lake from the viewpoint in about 30 minutes on foot if you want a taste without the full trail. Park at the top while the hikers are below.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Midday</div>
+            <div class="content-col">
+              <p>Regroup at the <strong>Miradouro do Pico da Barrosa</strong> — a short drive from the lake, right at the peak of the EN5-2A road. One of the only places on the entire island where you can see both the south coast and the north coast at the same time. A genuinely jaw-dropping perspective on the scale of São Miguel. Great lunch spot — bring picnic supplies from the house or grab something in the car.</p>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Afternoon</div>
+            <div class="content-col">
+              <p><strong>Caldeira Velha hot springs</strong> (~€10/person) on the drive back down toward the north coast. A lush jungle ravine with a waterfall tumbling into a warm geothermal pool (21°C), plus smaller hotter pools below (35°C). Prehistoric ferns, volcanic steam, complete magic. Book a 1.5-hour time slot in advance — visitor numbers are capped.</p>
+              <div class="warn-inline">⚠️ Dark swimsuits only — the iron-rich water stains. Same rule as Furnas.</div>
+              <div class="tip-inline">💡 This moves Caldeira Velha off the Sete Cidades day (Wed 6/3), which was already very long. Two birds, one stone — and the hot springs feel even more special after a morning hike than after a long drive.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Evening</div>
+            <div class="content-col">
+              <p>Drive back to the houses (~30 min south). First group dinner out — try <strong>A Tasca</strong> in Ponta Delgada (arrive before 6pm, no reservations) or book ahead. You've earned it.</p>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="act-group-label" data-group="morning" style="color:var(--green);">☀️ Morning activities — best done early</div>
-
-      <div class="act-card" data-tags="hike morning">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🏆</div><div><div class="act-name">Lagoa do Fogo — "Lake of Fire"</div><div class="act-sub">The island's most beautiful view · turquoise volcanic crater lake · 20 min from house</div></div></div>
-          <div class="act-head-right"><span class="tag tag-rust">Leave by 7:30am</span><span class="tag tag-green">Moderate hike</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Trail</div><div>PRC03 SMI · 6.8 mi · ~1,706 ft gain · ~3.5–4 hrs round trip</div></div>
-          <div class="act-row"><div class="act-lbl">Relaxed group</div><div>Miradouro da Lagoa do Fogo — car-accessible, direct crater view. Can descend to the lake in ~30 min on foot.</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Pico da Barrosa viewpoint (on the road) · Caldeira Velha hot springs (afternoon)</div></div>
-          <div class="warn-pill">⚠️ Check webcam first — fog can roll in by 10am. If socked in, start with Caldeira Velha and return mid-afternoon.</div>
-        </div>
-      </div>
-
-      <div class="act-card" data-tags="hike morning">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🌋</div><div><div class="act-name">Sete Cidades — Vista do Rei + Boca do Inferno</div><div class="act-sub">The postcard view of the Azores · twin crater lakes · west side</div></div></div>
-          <div class="act-head-right"><span class="tag tag-rust">Leave by 7:30am</span><span class="tag tag-green">Easy viewpoints</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>West side · ~45 min from house</div></div>
-          <div class="act-row"><div class="act-lbl">Vista do Rei</div><div>The iconic overlook — twin blue and green crater lakes below. Walk the Monte Palace ruins for a higher angle. Parking fills by 9am.</div></div>
-          <div class="act-row"><div class="act-lbl">Boca do Inferno</div><div>1.2km walk from Lagoa do Canário parking. 360° views of both lakes + the Atlantic. ~10 min drive from Vista do Rei.</div></div>
-          <div class="act-row"><div class="act-lbl">Then</div><div>Drive down into the caldera village for lunch, then split for afternoon hike or lake bikes</div></div>
-          <div class="warn-pill">⚠️ Completely invisible in cloud — check webcam before driving.</div>
-        </div>
-      </div>
-
-      <div class="act-card" data-tags="hike morning">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🌊</div><div><div class="act-name">Sete Cidades Rim Hike</div><div class="act-sub">Vista do Rei to the village · world-class ridge walk · adventurous group</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Full morning</span><span class="tag tag-green">Challenging · 7.5 mi</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Stats</div><div>7.5 mi · 1,459 ft elevation · ~5 hrs · point-to-point (arrange car shuttle)</div></div>
-          <div class="act-row"><div class="act-lbl">Alternative</div><div>Serra Devassa loop (2–2.5 hrs) for beautiful 360° crater views at a shorter distance</div></div>
-          <div class="act-row"><div class="act-lbl">Meanwhile</div><div>Relaxed group rents bikes around the flat lake edge or explores the village</div></div>
+        <div class="tags">
+          <span class="tag tag-rust">Leave by 7:30am — check webcam first</span>
+          <span class="tag tag-rust">Dark swimsuits for Caldeira Velha</span>
+          <span class="tag tag-ocean">Book Caldeira Velha time slot in advance</span>
+          <span class="tag tag-green">Split-group friendly at Lagoa do Fogo</span>
+          <span class="tag tag-rust">Book dinner or A Tasca by 6pm</span>
         </div>
       </div>
+    </div>
 
-      <div class="act-card" data-tags="hike morning">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🌿</div><div><div class="act-name">Salto do Cabrito Waterfall Trail</div><div class="act-sub">Forest · geothermal springs · river canyon · 40m waterfall with swimming pool</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Morning or afternoon</span><span class="tag tag-green">Medium · ~5 mi</span><div class="act-chev">▼</div></div>
+    <!-- DAY 3: WHALE WATCHING -->
+    <div class="day-panel" id="d3">
+      <div class="day-card">
+        <div class="day-header-bar" style="background: #185FA5;">
+          <div>
+            <div style="font-size:12px;opacity:0.7;margin-bottom:4px;">Day 3 · Monday, June 1</div>
+            <div class="day-title">Whale Watching + Chapel + Dinner Out</div>
+          </div>
+          <div class="day-vibe">Most memorable day</div>
         </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Trail</div><div>PRC29 SMI · ~5 mi · 3–3.5 hrs · starts near Caldeiras da Ribeira Grande</div></div>
-          <div class="act-row"><div class="act-lbl">Location</div><div>North coast · near Ribeira Grande · ~40 min from house</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Ribeira Grande lunch · Gorreana Tea (~15 min east along north coast)</div></div>
-          <div class="tip-pill">💡 Some sections include elevated walkways and stairs — not ideal for anyone with a fear of heights.</div>
+        <div class="day-body">
+          <div class="time-row">
+            <div class="time-col">8:15 AM</div>
+            <div class="content-col">
+              <p>Walk or drive 5 min to the <strong>Vila Franca do Campo marina</strong>. Check in with Futurismo Azores Adventures. Split into your boats:</p>
+              <p>🚢 <strong>Catamaran</strong> — Paula, MB, Amy & Beth · Smooth ride, more deck space, great sightlines. Ideal for anyone who prefers a stable, comfortable experience.</p>
+              <p>🚤 <strong>Zodiac</strong> — Kathie, Rachel, Emma, Meg, Casey & Nellie · Fast, low to the water, and closer to the animals when they surface. The wilder, more exhilarating ride.</p>
+              <div class="warn-inline">⚠️ Zodiac riders: eat a light breakfast (not a big one), wear layers, and expect to get splashed. Motion sickness meds recommended if you're prone — take them 30–60 min before boarding.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">9:00 AM</div>
+            <div class="content-col">
+              <p><strong>Both boats depart.</strong> ~3 hours on the Atlantic. June is one of the best months of the year — excellent for sperm whales, common and bottlenose dolphins, and sometimes blue whales or fin whales. Futurismo uses land-based spotters with binoculars to locate animals before the boats head out, giving a very high success rate.</p>
+              <div class="tip-inline">💡 The zodiac gets lower and closer when an animal surfaces — unforgettable. The catamaran gives a broader view and a better vantage point when dolphins bow-ride.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Noon</div>
+            <div class="content-col">
+              <p>Return to marina ~noon. Regroup, dry off, and compare stories over lunch. Grab something casual in Vila Franca do Campo — the village square has good spots — or head back to the house for a relaxed lunch on the terrace.</p>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Afternoon</div>
+            <div class="content-col">
+              <p>Free afternoon — a well-earned rest. Pool at the house, read, nap, or take a gentle walk through Vila Franca do Campo village.</p>
+              <p>For anyone with energy: hike up to the <strong>Chapel of Nossa Senhora da Paz</strong> — a 10-minute walk from the village center up a beautiful tiled staircase lined with azulejo panels. Panoramic views over town and the Atlantic from the top. A genuinely special spot that almost no tourists find.</p>
+              <div class="tip-inline">💡 The chapel staircase is one of the island's hidden gems. Not in most guidebooks. The view from the top is completely worth it.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Evening</div>
+            <div class="content-col">
+              <p>Celebrate the day with a proper group dinner out in Ponta Delgada — the whale watching high deserves it. Options:</p>
+              <p><strong>Alcides</strong> — legendary Azorean steak with pimenta salgada. A classic, festive choice for a big group.</p>
+              <p><strong>A Tasca</strong> — lively Azorean classics, no reservations, arrive before 6pm or prepare to wait.</p>
+              <div class="tip-inline">💡 Book Alcides ahead for 12. Or do A Tasca if you're willing to arrive early — it's a great fit for the celebratory energy of this day.</div>
+            </div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag tag-rust">✅ Booked — Futurismo 9:00am</span>
+          <span class="tag tag-ocean">🚢 Catamaran: Paula, MB, Amy, Beth</span>
+          <span class="tag tag-green">🚤 Zodiac: Kathie, Rachel, Emma, Meg, Casey, Nellie</span>
+          <span class="tag tag-rust">Book dinner ahead</span>
         </div>
       </div>
+    </div>
 
-      <div class="act-card" data-tags="hike morning easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🌅</div><div><div class="act-name">Nordeste Cliffs — Ponta do Sossego + Ponta da Madrugada</div><div class="act-sub">Far east · dramatic clifftop gardens · almost no tourists</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Morning</span><span class="tag tag-green">Easy · walking only</span><div class="act-chev">▼</div></div>
+    <!-- DAY 4: FURNAS -->
+    <div class="day-panel" id="d4">
+      <div class="day-card">
+        <div class="day-header-bar" style="background: #5D3A1A;">
+          <div>
+            <div style="font-size:12px;opacity:0.7;margin-bottom:4px;">Day 4 · Tuesday, June 2</div>
+            <div class="day-title">Furnas — Volcano Day</div>
+          </div>
+          <div class="day-vibe">A full group day</div>
         </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>Far northeast · ~1 hr from house</div></div>
-          <div class="act-row"><div class="act-lbl">Sossego</div><div>Manicured clifftop garden over the Atlantic. Free, peaceful, benches everywhere — perfect for the aunts.</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Nordeste village lunch · Lagoa do Congro on the drive home · Janela do Inferno detour</div></div>
-          <div class="tip-pill">💡 No fog risk here — a great swap if Sete Cidades or Lagoa do Fogo are socked in.</div>
+        <div class="day-body">
+          <div class="time-row">
+            <div class="time-col">Morning</div>
+            <div class="content-col">
+              <p><strong>Caldeiras das Furnas</strong> (free, open air): walk among active fumaroles, boiling mud pots, and sulphur steam vents at Lagoa das Furnas. Around noon, watch staff pull out the cozido pots that have been cooking underground in the volcanic soil since morning. This is unlike anything you've ever seen.</p>
+              <p><strong>Miradouro do Pico do Ferro</strong> for a beautiful high view over the whole valley.</p>
+              <div class="tip-inline">💡 The sulphur smell hits you as you arrive in Furnas. It fades after a few minutes. Lean into it.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Midday</div>
+            <div class="content-col">
+              <p><strong>Cozido das Furnas</strong> — pre-booked at Tony's Restaurante or Caldeiras & Vulcões. A meat and vegetable stew slow-cooked underground for 5+ hours by volcanic heat alone. One of the most unique meals on earth.</p>
+              <div class="warn-inline">⚠️ Must be reserved in advance — restaurants prepare it to order and quantities are limited.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Afternoon</div>
+            <div class="content-col">
+              <p>Hot springs — choose your vibe:</p>
+              <p><strong>Terra Nostra Park</strong> (€16/person): world-famous botanical garden + a huge iron-orange thermal pool (38–42°C). Renovated in 2024. Incredible garden to explore before soaking.</p>
+              <p><strong>Poça da Dona Beija</strong>: 5 pools at different temperatures, more casual, open until 10pm.</p>
+              <div class="warn-inline">⚠️ Dark swimsuits only. Both pools have iron-rich water that stains permanently.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Evening</div>
+            <div class="content-col">
+              <p>Optional detour: <strong>Bar da Caloura</strong> (30 min on the way home) for fresh seafood right on the water at sunset. Or head home for a relaxed house dinner.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag tag-rust">Pre-book cozido — essential</span>
+          <span class="tag tag-rust">Dark swimsuits!</span>
+          <span class="tag tag-green">Everyone together</span>
+          <span class="tag tag-ocean">Terra Nostra €16/person</span>
         </div>
       </div>
+    </div>
 
-      <div class="act-card" data-tags="water morning">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🛶</div><div><div class="act-name">Vila Franca Islet — Kayak Tour</div><div class="act-sub">Sea caves · paddle into the volcanic crater · land on the beach · 5 min from house</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Departs 9:30am</span><span class="tag tag-green">Moderate · ~3 hrs</span><div class="act-chev">▼</div></div>
+    <!-- DAY 5: SETE CIDADES -->
+    <div class="day-panel" id="d5">
+      <div class="day-card">
+        <div class="day-header-bar" style="background: #1B4965;">
+          <div>
+            <div style="font-size:12px;opacity:0.7;margin-bottom:4px;">Day 5 · Wednesday, June 3</div>
+            <div class="day-title">Sete Cidades — the Iconic West</div>
+          </div>
+          <div class="day-vibe">The flagship day</div>
         </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Operator</div><div>Epic Volcanic (green kayaks at the end of the marina) or Fun Activities Azores. Tandem sit-on-top kayaks, stable for beginners.</div></div>
-          <div class="act-row"><div class="act-lbl">What it is</div><div>~25 min paddle to the islet, through sea caves, around the outer crater, and landing on the small beach inside to explore on foot.</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Zodiac boat tour for the relaxed group at the same time</div></div>
-          <div class="warn-pill">⚠️ Weather-dependent — if seas are rough, swap to the boat tour. Book ahead for a group.</div>
-          <div class="tip-pill">💡 Dry bags provided. Grab a queijada at Queijadas do Morgado near the marina before you launch.</div>
+        <div class="day-body">
+          <div class="time-row">
+            <div class="time-col">Very Early</div>
+            <div class="content-col">
+              <p>Leave by <strong>7:30am</strong>. This is important — Vista do Rei parking fills by 9am, and fog can roll in by mid-morning and ruin everything. Check the webcam before leaving.</p>
+              <div class="warn-inline">⚠️ Sete Cidades fog warning: if the webcam shows thick cloud, consider flipping this day with another. The lakes are invisible from above in heavy fog — there's nothing to see.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Morning</div>
+            <div class="content-col">
+              <p><strong>Miradouro Vista do Rei</strong> — the postcard view of the Azores. Twin blue and green volcanic crater lakes spread out below you. Walk the old Monte Palace hotel ruins for an even higher angle.</p>
+              <p><strong>Boca do Inferno viewpoint</strong> — a short 1.2km walk from Lagoa do Canário parking. Panoramic views of both lakes plus the Atlantic beyond.</p>
+              <div class="tip-inline">💡 Do Vista do Rei first (more accessible), then Boca do Inferno. About 10 min drive apart.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Midday</div>
+            <div class="content-col">
+              <p>Drive down into the caldera to the tiny village of Sete Cidades. Lunch at one of the small local spots in the village. Then the group splits:</p>
+              <p><strong>Adventurous group:</strong> Vista do Rei to Sete Cidades hike (7.5 mi, 1,459 ft elevation, ~5 hrs) or Serra Devassa loop (2–2.5 hrs, beautiful 360° views).</p>
+              <p><strong>Relaxed group:</strong> Stroll or rent bikes around the flat lake edge. Walk the old aqueduct. Sit by the water.</p>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Evening</div>
+            <div class="content-col">
+              <p>Return home. Sunset from the house, dinner in or nearby in Vila Franca do Campo. Full day — everyone will sleep well.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag tag-rust">Leave by 7:30am</span>
+          <span class="tag tag-green">Split-group friendly</span>
+          <span class="tag tag-ocean">Check webcam first!</span>
         </div>
       </div>
+    </div>
 
-      <div class="act-card" data-tags="water easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🚤</div><div><div class="act-name">Vila Franca Islet — Zodiac Boat Tour</div><div class="act-sub">Guided tour around the "Princess Ring" · biologist commentary · 5 min from house</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Morning</span><span class="tag tag-green">Easy · ~1 hr</span><div class="act-chev">▼</div></div>
+    <!-- DAY 6: NORDESTE -->
+    <div class="day-panel" id="d6">
+      <div class="day-card">
+        <div class="day-header-bar" style="background: #3D405B;">
+          <div>
+            <div style="font-size:12px;opacity:0.7;margin-bottom:4px;">Day 6 · Thursday, June 4</div>
+            <div class="day-title">Nordeste — The Quiet East</div>
+          </div>
+          <div class="day-vibe">Hidden gem day</div>
         </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Operators</div><div>Terra Azul or Azores Whale Watch</div></div>
-          <div class="act-row"><div class="act-lbl">What it is</div><div>Guided zodiac tour around the perfectly circular submerged volcanic crater ~500m offshore. Biologist commentary on geology and marine life.</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Kayak tour for the adventurous group at the same time</div></div>
+        <div class="day-body">
+          <div class="time-row">
+            <div class="time-col">Morning</div>
+            <div class="content-col">
+              <p>Drive east (~1 hr) to <strong>Nordeste</strong> — the far eastern corner of São Miguel. Spectacular cliffs, wildflowers, lush green valleys, and almost no tourists.</p>
+              <p><strong>Ponta do Sossego</strong>: a manicured clifftop garden perched over the Atlantic. Free, peaceful, and genuinely beautiful.</p>
+              <p><strong>Ponta da Madrugada</strong>: another dramatic clifftop viewpoint. Less visited and incredibly scenic.</p>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Midday</div>
+            <div class="content-col">
+              <p>Lunch in Nordeste village — small, authentic, local.</p>
+              <p>On the drive back: <strong>Lagoa do Congro</strong> — a hidden crater lake via a short forest hike (~30 min round trip). Fluorescent green water, absolute silence, birds, ferns. One of the most magical spots on the island.</p>
+              <div class="tip-inline">💡 Look for the Lagoa do Congro exit off EN1-1A about 10 min past Furnas heading west. Easy to miss — save it in Maps before you go.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Afternoon</div>
+            <div class="content-col">
+              <p>Back home by 3–4pm. Great <strong>house day</strong> option for anyone who wants to skip the drive — pool, swim, read, cook. No pressure either way.</p>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Evening</div>
+            <div class="content-col">
+              <p>Dinner at home — cook together. A cozy night in at this point in the trip.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag tag-green">Optional house day for relaxed crew</span>
+          <span class="tag tag-green">Hidden gem: Lagoa do Congro</span>
+          <span class="tag tag-ocean">Far east of island</span>
         </div>
       </div>
+    </div>
 
-      <div class="act-group-label" data-group="afternoon" style="color:var(--green);">🕑 Afternoon or flexible</div>
-
-      <div class="act-card" data-tags="hike easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🌿</div><div><div class="act-name">Lagoa do Congro — Hidden Crater Lake</div><div class="act-sub">Fluorescent green water · total silence · almost no one goes here</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Anytime</span><span class="tag tag-green">Easy · 30 min round trip</span><div class="act-chev">▼</div></div>
+    <!-- DAY 7: ISLET + LAST NIGHT -->
+    <div class="day-panel" id="d7">
+      <div class="day-card">
+        <div class="day-header-bar" style="background: #0D7377;">
+          <div>
+            <div style="font-size:12px;opacity:0.7;margin-bottom:4px;">Day 7 · Friday, June 5</div>
+            <div class="day-title">Vila Franca Islet + Last Evening</div>
+          </div>
+          <div class="day-vibe">Last full day — make it count</div>
         </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>Off EN1-1A, ~10 min past Furnas heading west. Save in Maps — easy to miss.</div></div>
-          <div class="act-row"><div class="act-lbl">What it is</div><div>Short forest trail to a tucked-away crater lake with vivid green water. Birds, ferns, volcanic silence. One of the island's best-kept secrets.</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Nordeste day · Furnas day · any drive along the central EN1-1A</div></div>
+        <div class="day-body">
+          <div class="time-row">
+            <div class="time-col">Morning</div>
+            <div class="content-col">
+              <p>The islet is 5 minutes from our door — the group splits by energy level for two different ways to experience the same iconic landmark:</p>
+              <p>🚤 <strong>Zodiac / Boat Tour</strong> (relaxed group) — A guided historical zodiac tour around the "Princess Ring," a perfectly circular submerged volcanic crater 500m offshore. ~1 hour. Biologist commentary on the geology and marine life. Book through Terra Azul or Azores Whale Watch.</p>
+              <p>🛶 <strong>Kayak Tour</strong> (adventurous group) — Departs 9:30am from the marina. ~3 hours paddling through sea caves, circumnavigating the crater, and landing on the small beach inside the islet to explore on foot. Since the lagoon doesn't open for swimming until June 15, this is actually the *best* way to get inside. Operators: <strong>Epic Volcanic</strong> (wooden house at the end of the marina — look for the green kayaks) or <strong>Fun Activities Azores</strong>. Both use sit-on-top tandem kayaks, stable for beginners.</p>
+              <div class="tip-inline">💡 Kayak riders: book ahead for a group and confirm they can handle your party size. The 25–30 min paddle to the islet is easy-moderate. Dry bags are provided for phones and valuables. Pick up a queijada at Queijadas do Morgado (a few doors down from the marina) before you launch.</div>
+              <div class="warn-inline">⚠️ Kayaking is weather-dependent. If seas are rough on June 5, the boat tour is the reliable fallback — always worth it.</div>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Afternoon</div>
+            <div class="content-col">
+              <p>Regroup after the morning on the water. Head to Ponta Delgada — visit a <strong>pineapple plantation</strong> if you didn't on arrival day (Augusto Arruda, just outside the city). Last afternoon at the houses: swim, pack, unwind. Soak up the last of it.</p>
+            </div>
+          </div>
+          <div class="time-row">
+            <div class="time-col">Evening</div>
+            <div class="content-col">
+              <p><strong>Final dinner out</strong> — the last night together deserves something special. Book ahead in Ponta Delgada:</p>
+              <p><strong>Tasquinha Vieira</strong>: the best restaurant on the island. Modern Azorean fusion, seasonal sharing plates, exceptional wine list. Reserve well in advance for 12.</p>
+              <p><strong>Alcides</strong>: legendary Azorean steak with pimenta salgada. A fitting, festive last meal on the island.</p>
+              <div class="tip-inline">💡 After dinner, take a slow walk along the Ponta Delgada waterfront promenade. Harbor lights, warm June air, last night in the Azores. 🌊</div>
+            </div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag tag-rust">Book kayak tour ahead — Epic Volcanic</span>
+          <span class="tag tag-ocean">🛶 Kayak: adventurous group · 🚤 Boat: relaxed group</span>
+          <span class="tag tag-rust">Book final dinner ahead</span>
+          <span class="tag tag-ocean">Last night — celebrate! 🥂</span>
         </div>
       </div>
+    </div>
 
-      <div class="act-card" data-tags="hike easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">👁️</div><div><div class="act-name">Janela do Inferno — "Window to Hell"</div><div class="act-sub">Jungle tunnels · old aqueducts · water erupting from a cliff face</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Afternoon</span><span class="tag tag-green">Easy-Moderate · ~2 hrs</span><div class="act-chev">▼</div></div>
+    <!-- DAY 8: FLY HOME -->
+    <div class="day-panel" id="d8">
+      <div class="day-card">
+        <div class="day-header-bar" style="background: #6B7280;">
+          <div>
+            <div style="font-size:12px;opacity:0.7;margin-bottom:4px;">Day 8 · Saturday, June 6</div>
+            <div class="day-title">Pack Up + Fly Home</div>
+          </div>
+          <div class="day-vibe">Travel day</div>
         </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>Near Lagoa municipality · en route back from Nordeste</div></div>
-          <div class="act-row"><div class="act-lbl">What it is</div><div>Walk through jungle tunnels and moss-covered aqueducts to a vertical rock face where a spring erupts straight out of the cliff. Short, bizarre, unforgettable.</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Nordeste day — perfect afternoon add-on on the drive home</div></div>
-          <div class="warn-pill">⚠️ Small flashlight for the tunnels. Trail shoes with grip essential — wet stones throughout.</div>
+        <div class="day-body">
+          <div class="time-row">
+            <div class="time-col">Morning</div>
+            <div class="content-col">
+              <p>Pack up the houses. One last coffee and pastry if time allows. Return vans at PDL airport. Check in and head home full of stories, hot spring glow, and volcanic stew memories.</p>
+              <div class="tip-inline">💡 Airport is 20 min from the house. Give yourself extra time for luggage and returns.</div>
+            </div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag tag-green">PDL airport 20 min from house</span>
         </div>
       </div>
+    </div>
 
-      <div class="act-card" data-tags="hike easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">💦</div><div><div class="act-name">Salto do Prego / Sanguinho Trail</div><div class="act-sub">Abandoned village · three waterfalls · swimming holes in the forest</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Morning or afternoon</span><span class="tag tag-green">Easy · 2.8 mi · ~2 hrs</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>Near Faial da Terra · ~30 min from Furnas · southeast coast</div></div>
-          <div class="act-row"><div class="act-lbl">What it is</div><div>Loop through forest to three cascading waterfalls including Cascata da Gruta (Cave Waterfall). Passes through Sanguinho, a hauntingly beautiful abandoned village.</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Furnas day — skip the hot springs and swim in the waterfall pools instead</div></div>
-          <div class="tip-pill">💡 Bring swimwear — the waterfall pools are the whole point.</div>
-        </div>
-      </div>
-
-      <div class="act-card" data-tags="easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">⛵</div><div><div class="act-name">Sete Cidades Village — Bikes + Lake + Aqueduct</div><div class="act-sub">Flat loop around the crater lake floor · hydrangea roads · relaxed group</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Afternoon</span><span class="tag tag-green">Easy · relaxed group</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">What it is</div><div>Rent bikes in the village, loop around the flat lake edge, walk the old aqueduct, sit by the water. Natural pairing while adventurous group does the rim hike.</div></div>
-          <div class="tip-pill">💡 The hydrangea-lined lake circuit road is one of the most beautiful rides in the Azores.</div>
-        </div>
-      </div>
-
-      <div class="act-card" data-tags="easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">⛪</div><div><div class="act-name">Chapel of Nossa Senhora da Paz</div><div class="act-sub">Hidden gem · tiled staircase · panoramic views over Vila Franca · 10 min walk from house</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Anytime</span><span class="tag tag-green">Easy · 10 min walk</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">What it is</div><div>18th-century chapel up a beautiful azulejo-tiled staircase. Panoramic views of Vila Franca and the islet from the top. Not in most guidebooks.</div></div>
-          <div class="act-row"><div class="act-lbl">Best timing</div><div>After whale watching on Mon 6/1 · any evening before dinner</div></div>
-        </div>
-      </div>
-
-      <div class="act-group-label" data-group="springs" style="color:var(--green);">♨️ Hot springs</div>
-
-      <div class="act-card" data-tags="springs easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">♨️</div><div><div class="act-name">Caldeira Velha</div><div class="act-sub">Jungle waterfall pool · prehistoric ferns · wilder than Furnas · ~€10/person</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Afternoon</span><span class="tag tag-green">Easy · all levels</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>Between Ribeira Grande and Lagoa do Fogo · north-central island</div></div>
-          <div class="act-row"><div class="act-lbl">What it is</div><div>Waterfall into a warm geothermal pool (21°C) in a fern-draped jungle ravine, plus hotter pools below (35°C). Visitor numbers capped — book a 1.5-hr time slot in advance.</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Lagoa do Fogo day (natural afternoon finish) · Salto do Cabrito / Ribeira Grande north coast day</div></div>
-          <div class="warn-pill">⚠️ Dark swimsuits only — iron-rich water stains permanently.</div>
-        </div>
-      </div>
-
-      <div class="act-card" data-tags="springs easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🌿</div><div><div class="act-name">Terra Nostra Park + Thermal Pool</div><div class="act-sub">World-famous botanical garden · iconic iron-orange pool · Furnas · €16/person</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Afternoon</span><span class="tag tag-green">Easy · all levels</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>Furnas village · ~40 min from house</div></div>
-          <div class="act-row"><div class="act-lbl">What it is</div><div>Vast botanical garden + a huge iron-orange thermal pool (38–42°C). Renovated in 2024. Explore the garden first, then soak.</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Furnas day — caldeiras in morning, cozido lunch, Terra Nostra afternoon</div></div>
-          <div class="warn-pill">⚠️ Dark swimsuits only — stains permanently.</div>
-        </div>
-      </div>
-
-      <div class="act-card" data-tags="springs easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">💧</div><div><div class="act-name">Poça da Dona Beija</div><div class="act-sub">5 pools · varying temperatures · open until 10pm · Furnas</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Afternoon or evening</span><span class="tag tag-green">Easy · all levels</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>Furnas village · short walk from Terra Nostra</div></div>
-          <div class="act-row"><div class="act-lbl">What it is</div><div>Five outdoor pools at varying temperatures, cooler and shallower than Terra Nostra. More casual, open late.</div></div>
-          <div class="warn-pill">⚠️ Dark swimsuits only.</div>
-        </div>
-      </div>
-
-      <div class="act-group-label" data-group="food" style="color:var(--green);">🍽️ Food, culture &amp; easy stops</div>
-
-      <div class="act-card" data-tags="food easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🌋</div><div><div class="act-name">Furnas Caldeiras + Cozido das Furnas</div><div class="act-sub">Boiling mud pots · volcanic stew cooked underground · must pre-book</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Morning → lunch</span><span class="tag tag-rust">Pre-book required</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>Furnas village · east side · ~40 min from house</div></div>
-          <div class="act-row"><div class="act-lbl">Caldeiras</div><div>Free open-air walk among active fumaroles, boiling mud pots, and sulphur vents. Watch staff pull cozido pots from underground around noon.</div></div>
-          <div class="act-row"><div class="act-lbl">Cozido</div><div>Tony's Restaurante or Caldeiras & Vulcões. Meat and vegetable stew slow-cooked underground for 5+ hours by volcanic heat.</div></div>
-          <div class="warn-pill">⚠️ Must reserve in advance — prepared to order, quantities limited.</div>
-        </div>
-      </div>
-
-      <div class="act-card" data-tags="food easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🍵</div><div><div class="act-name">Gorreana Tea Plantation</div><div class="act-sub">Europe's only tea plantation · free · family-owned since 1883 · north coast</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Anytime</span><span class="tag tag-green">Easy · flat · free</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>North coast · near Porto Formoso · ~40 min from house</div></div>
-          <div class="act-row"><div class="act-lbl">What it is</div><div>Walk the rolling green tea rows, tour the old factory, taste the teas for free. Buy some to bring home.</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Salto do Cabrito / Ribeira Grande north coast day · natural meeting point for split groups</div></div>
-        </div>
-      </div>
-
-      <div class="act-card" data-tags="food easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🏙️</div><div><div class="act-name">Ribeira Grande — Town Wander + Lunch</div><div class="act-sub">Island's second city · charming historic center · local energy · north coast</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Midday</span><span class="tag tag-green">Easy · all levels</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>North coast · ~35 min from house</div></div>
-          <div class="act-row"><div class="act-lbl">See</div><div>Ponte das Três Arcos stone bridge, Igreja do Espírito Santo. Quieter and more local than Ponta Delgada.</div></div>
-          <div class="act-row"><div class="act-lbl">Lunch</div><div>Associação Agrícola — legendary local steak in a farmers' association building. A local secret.</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Salto do Cabrito (trailhead nearby) · Gorreana Tea (~15 min east)</div></div>
-        </div>
-      </div>
-
-      <div class="act-card" data-tags="food easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🍍</div><div><div class="act-name">Pineapple Plantation</div><div class="act-sub">Greenhouse-grown Azorean pineapple · 2 years per fruit · free tours</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Anytime</span><span class="tag tag-green">Easy · free</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>Just outside Ponta Delgada · Augusto Arruda plantation</div></div>
-          <div class="act-row"><div class="act-lbl">Best timing</div><div>Arrival day (Sat 5/30) · or last day (Fri 6/5) before packing up</div></div>
-          <div class="tip-pill">💡 Sweeter and less acidic than any pineapple you've had. Buy a few to eat at the house.</div>
-        </div>
-      </div>
-
-      <div class="act-card" data-tags="food easy">
-        <div class="act-head" onclick="toggleCard(this)">
-          <div class="act-head-left"><div class="act-emoji">🗻</div><div><div class="act-name">Pico da Barrosa Viewpoint</div><div class="act-sub">See both the north AND south coasts at once · zero effort · roadside stop</div></div></div>
-          <div class="act-head-right"><span class="tag tag-ocean">Anytime</span><span class="tag tag-green">Easy · roadside stop</span><div class="act-chev">▼</div></div>
-        </div>
-        <div class="act-body">
-          <div class="act-row"><div class="act-lbl">Location</div><div>On the EN5-2A near Lagoa do Fogo · park on the roadside</div></div>
-          <div class="act-row"><div class="act-lbl">What it is</div><div>One of the only places on São Miguel to see both coastlines simultaneously. Two-minute stop, jaw-dropping payoff.</div></div>
-          <div class="act-row"><div class="act-lbl">Pairs with</div><div>Lagoa do Fogo day — right on the road. Great picnic lunch spot.</div></div>
-        </div>
-      </div>
-
-    </div><!-- end act-cards -->
   </div>
 </section>
 
@@ -555,20 +660,22 @@
   <div class="container">
     <div class="section-label">Planning for everyone</div>
     <div class="section-title">Adventures for every level</div>
-    <p style="color:var(--text-muted);font-size:15px;margin-bottom:24px;">Most days have a natural split built in — the adventurous cousins go further, the relaxed aunts enjoy at their own pace, and everyone reunites for dinner.</p>
+    <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 24px;">São Miguel is beautifully designed for a mixed-energy group. Most days have a natural split built in — the adventurous cousins go further, the relaxed aunts enjoy at their own pace, and everyone reunites for dinner.</p>
     <div class="split-grid">
       <div class="split-card adventurous">
         <h3>The adventurers</h3>
         <div class="who">Cousins · 20s & 30s</div>
         <ul>
           <li>🥾 Sete Cidades rim hike (7.5 mi, 1,459 ft)</li>
-          <li>🥾 Lagoa do Fogo full trail (6.8 mi, moderate)</li>
-          <li>🥾 Salto do Cabrito waterfall trail (~5 mi)</li>
-          <li>🥾 Salto do Prego / Sanguinho waterfalls (easy)</li>
-          <li>🥾 Janela do Inferno jungle tunnel hike</li>
-          <li>🥾 Lagoa do Congro hidden crater lake</li>
-          <li>🛶 Kayak to Vila Franca Islet</li>
-          <li>🐋 Whale watching (zodiac)</li>
+          <li>🥾 Serra Devassa crater loop (2–2.5 hrs)</li>
+          <li>🥾 Lagoa do Fogo — stunning volcanic crater lake hike (6.8 mi, moderate)</li>
+          <li>🥾 Salto do Prego / Sanguinho — waterfalls + swimming holes (2.8 mi, easy)</li>
+          <li>🥾 Janela do Inferno — jungle tunnels, aqueducts, "window to hell" spring</li>
+          <li>🥾 Boca do Inferno (short but dramatic)</li>
+          <li>🛶 Kayak to Vila Franca Islet (sea caves + crater landing)</li>
+          <li>🐋 Whale watching (zodiac-style)</li>
+          <li>🌿 Lagoa do Congro hidden crater lake</li>
+          <li>🧗 Nordeste coastal trail</li>
         </ul>
       </div>
       <div class="split-card relaxed">
@@ -576,17 +683,17 @@
         <div class="who">Aunts · 60s & 70s</div>
         <ul>
           <li>🌅 Vista do Rei viewpoint (steps from parking)</li>
-          <li>🌋 Lagoa do Fogo viewpoint (car-accessible)</li>
-          <li>🍵 Gorreana Tea Plantation (flat, free)</li>
+          <li>🍵 Gorreana Tea Plantation (flat, free, beautiful)</li>
           <li>♨️ Terra Nostra garden + thermal pool</li>
-          <li>♨️ Caldeira Velha jungle waterfall springs</li>
-          <li>🚢 Whale watching (catamaran)</li>
-          <li>🚤 Vila Franca Islet boat tour</li>
+          <li>♨️ Poça da Dona Beija springs (shallow pools)</li>
+          <li>🌿 Pinhal da Paz forest walk (easy 2 mi)</li>
+          <li>🚢 Whale watching (catamaran-style)</li>
+          <li>🏝️ Vila Franca boat tour</li>
           <li>🏡 Pool days at the house</li>
         </ul>
       </div>
     </div>
-    <div class="intro-note" style="margin-top:16px;"><strong>Full group moments:</strong> Whale watching, Furnas (caldeiras + cozido + hot springs), Vila Franca Islet, and Gorreana Tea all work beautifully for <em>everyone together</em>.</div>
+    <div class="intro-note" style="margin-top: 16px;"><strong>The best part:</strong> Whale watching, Furnas (hot springs + cozido), the islet boat tour, and Gorreana Tea Plantation all work beautifully for <em>everyone together</em> — these are your full-group moments.</div>
   </div>
 </section>
 
@@ -597,29 +704,29 @@
     <div class="section-title">Where to eat</div>
     <div class="food-section-label">Ponta Delgada · City restaurants</div>
     <div class="restaurant-list">
-      <div class="r-card"><div><div class="r-name">Tasquinha Vieira</div><div class="r-desc">The best restaurant on the island. Modern Azorean fusion, seasonal sharing plates, exceptional wine list.</div></div><div class="r-meta"><div class="r-badge">Special occasion</div><div class="r-book">📞 Book well ahead</div></div></div>
-      <div class="r-card"><div><div class="r-name">A Tasca</div><div class="r-desc">Lively tavern with Azorean classics, live music. No reservations — arrive before 6pm or wait.</div></div><div class="r-meta"><div class="r-badge">No reservations</div><div class="r-book">Arrive by 6pm</div></div></div>
-      <div class="r-card"><div><div class="r-name">Alcides</div><div class="r-desc">Legendary Azorean steak with pimenta salgada (salty pickled peppers). A São Miguel institution.</div></div><div class="r-meta"><div class="r-badge">Steak night</div><div class="r-book">📞 Book ahead</div></div></div>
-      <div class="r-card"><div><div class="r-name">A Terra (Octant Hotel rooftop)</div><div class="r-desc">Rooftop bar with sweeping marina views. Excellent cocktails including the Portuguese Negroni.</div></div><div class="r-meta"><div class="r-badge">Cocktails + views</div></div></div>
-      <div class="r-card"><div><div class="r-name">Louvre Michaelense</div><div class="r-desc">Charming pre-war French-Azorean café right by the main church. Great for morning coffee or evening wine.</div></div><div class="r-meta"><div class="r-badge">Café / casual</div></div></div>
+      <div class="r-card"><div><div class="r-name">Tasquinha Vieira</div><div class="r-desc">The best restaurant on the island. Modern Azorean fusion, seasonal sharing plates, impeccable service and atmosphere.</div></div><div class="r-meta"><div class="r-badge">Special occasion</div><div class="r-book">📞 Book well ahead</div></div></div>
+      <div class="r-card"><div><div class="r-name">A Tasca</div><div class="r-desc">Lively, beloved tavern with Azorean classics, live music, local art on the walls. No reservations — arrive before 6pm or wait.</div></div><div class="r-meta"><div class="r-badge">No reservations</div><div class="r-book">Arrive by 6pm</div></div></div>
+      <div class="r-card"><div><div class="r-name">Alcides</div><div class="r-desc">Legendary traditional Azorean steak with pimenta salgada (salty pickled peppers). A São Miguel institution.</div></div><div class="r-meta"><div class="r-badge">Steak night</div><div class="r-book">📞 Book ahead</div></div></div>
+      <div class="r-card"><div><div class="r-name">A Terra (Octant Hotel rooftop)</div><div class="r-desc">Rooftop bar with sweeping marina views. Excellent cocktails including the Portuguese Negroni. Perfect for an evening drink.</div></div><div class="r-meta"><div class="r-badge">Cocktails + views</div></div></div>
+      <div class="r-card"><div><div class="r-name">Louvre Michaelense</div><div class="r-desc">Charming pre-war French-Azorean café right by the main church. Wonderful for morning coffee, pastries, or an evening glass of wine.</div></div><div class="r-meta"><div class="r-badge">Café / casual</div></div></div>
     </div>
     <div class="food-section-label">Around the island</div>
     <div class="restaurant-list">
-      <div class="r-card"><div><div class="r-name">Tony's Restaurante · Furnas</div><div class="r-desc">Prime spot for Cozido das Furnas. Ask to see how it's prepared when you reserve.</div></div><div class="r-meta"><div class="r-badge">Furnas day lunch</div><div class="r-book">📞 Pre-book essential</div></div></div>
-      <div class="r-card"><div><div class="r-name">Bar da Caloura · Água de Pau</div><div class="r-desc">Only serves what was caught that day. Right on the water — write your name on the slate.</div></div><div class="r-meta"><div class="r-badge">Seafood on the water</div><div class="r-book">Arrive early</div></div></div>
-      <div class="r-card"><div><div class="r-name">Associação Agrícola · Ribeira Grande</div><div class="r-desc">Legendary steak in a farmers' association building. Industrial-looking, no ambiance, absolutely worth it.</div></div><div class="r-meta"><div class="r-badge">Local secret</div></div></div>
+      <div class="r-card"><div><div class="r-name">Tony's Restaurante · Furnas</div><div class="r-desc">Prime spot for Cozido das Furnas, the volcanic stew. Ask to see how it's prepared when you make your reservation.</div></div><div class="r-meta"><div class="r-badge">Furnas day lunch</div><div class="r-book">📞 Pre-book essential</div></div></div>
+      <div class="r-card"><div><div class="r-name">Bar da Caloura · Água de Pau</div><div class="r-desc">Only serves what was caught that day. Casual, right on the water. Write your name on the slate and wait.</div></div><div class="r-meta"><div class="r-badge">Seafood on the water</div><div class="r-book">Arrive early</div></div></div>
+      <div class="r-card"><div><div class="r-name">Associação Agrícola · Ribeira Grande</div><div class="r-desc">The farmers' association restaurant. Industrial-looking, no ambiance, absolutely legendary steak. A local secret worth the detour.</div></div><div class="r-meta"><div class="r-badge">Local secret</div></div></div>
     </div>
-    <div style="margin-top:32px;">
-      <div class="section-label" style="margin-bottom:14px;">What to eat</div>
+    <div style="margin-top: 32px;">
+      <div class="section-label" style="margin-bottom: 14px;">What to eat</div>
       <div class="food-grid">
-        <div class="food-item"><div class="food-name">Cozido das Furnas</div><div class="food-note">Volcanic stew cooked underground. Must-try in Furnas.</div></div>
-        <div class="food-item"><div class="food-name">Lapas (limpets)</div><div class="food-note">Grilled with garlic and butter. The definitive Azorean snack.</div></div>
-        <div class="food-item"><div class="food-name">Azorean steak</div><div class="food-note">With pimenta salgada and garlic white wine jus. Exceptional beef.</div></div>
-        <div class="food-item"><div class="food-name">São Miguel pineapple</div><div class="food-note">Greenhouse-grown for 2 years. Uniquely sweet. Buy at the plantation.</div></div>
-        <div class="food-item"><div class="food-name">Queijadas da Vila</div><div class="food-note">Dense, rich sweet tarts from Vila Franca do Campo.</div></div>
-        <div class="food-item"><div class="food-name">Local cheese + pepper sauce</div><div class="food-note">Mild fresh São Miguel cheese with spicy pepper sauce. Order as a starter.</div></div>
-        <div class="food-item"><div class="food-name">Gorreana tea</div><div class="food-note">Bright, delicate green and black tea from Europe's only plantation.</div></div>
-        <div class="food-item"><div class="food-name">Pastéis de nata</div><div class="food-note">Portuguese egg tarts — your daily breakfast ritual. Best warm.</div></div>
+        <div class="food-item"><div class="food-name">Cozido das Furnas</div><div class="food-note">Volcanic stew cooked underground by geothermal heat. Must-try in Furnas.</div></div>
+        <div class="food-item"><div class="food-name">Lapas (limpets)</div><div class="food-note">Grilled with garlic and butter. The definitive Azorean snack at any seaside restaurant.</div></div>
+        <div class="food-item"><div class="food-name">Azorean steak</div><div class="food-note">With pimenta salgada and garlic white wine jus. Exceptional beef from happy cows.</div></div>
+        <div class="food-item"><div class="food-name">São Miguel pineapple</div><div class="food-note">Greenhouse-grown for 2 years. Uniquely sweet and aromatic. Buy at the plantation.</div></div>
+        <div class="food-item"><div class="food-name">Queijadas da Vila</div><div class="food-note">Dense, rich sweet tarts from Vila Franca do Campo — available everywhere on the island.</div></div>
+        <div class="food-item"><div class="food-name">Local cheese + pepper sauce</div><div class="food-note">Mild fresh São Miguel cheese served with spicy pepper sauce. Order as a starter everywhere.</div></div>
+        <div class="food-item"><div class="food-name">Gorreana tea</div><div class="food-note">Bright, delicate green and black tea from Europe's only tea plantation. Hot or iced.</div></div>
+        <div class="food-item"><div class="food-name">Pastéis de nata</div><div class="food-note">Portuguese egg tarts — your daily breakfast ritual. Best warm, dusted with cinnamon.</div></div>
       </div>
     </div>
   </div>
@@ -631,15 +738,15 @@
     <div class="section-label">Insider knowledge</div>
     <div class="section-title">Tips & tricks</div>
     <div class="tips-grid">
-      <div class="tip-card"><div class="tip-icon">🌫️</div><h3>Check webcams every morning</h3><p>São Miguel weather changes fast. Check Sete Cidades and Lagoa do Fogo webcams before driving. Built-in flexibility is the key to a great trip.</p></div>
-      <div class="tip-card"><div class="tip-icon">⏰</div><h3>Early bird wins at viewpoints</h3><p>Vista do Rei parking fills by 9–10am on clear days. Arrive before 9am for the best light, fewest people, and a parking spot.</p></div>
-      <div class="tip-card"><div class="tip-icon">👙</div><h3>Dark swimsuits for hot springs</h3><p>Iron-rich water at Furnas and Caldeira Velha permanently stains light-colored swimwear orange. Pack dark or old swimsuits specifically for these days.</p></div>
-      <div class="tip-card"><div class="tip-icon">🌧️</div><h3>Always pack a rain layer</h3><p>Even on beautiful days, mountain temperatures drop and showers appear out of nowhere. A packable rain jacket is essential.</p></div>
+      <div class="tip-card"><div class="tip-icon">🌫️</div><h3>Check webcams every morning</h3><p>São Miguel weather changes fast. Sete Cidades viewpoints can be completely fogged over. Check live webcam apps before driving 45 min to find nothing. We've built in flexibility for exactly this.</p></div>
+      <div class="tip-card"><div class="tip-icon">⏰</div><h3>Early bird wins at viewpoints</h3><p>Vista do Rei parking fills by 9–10am on clear days. Arrive before 9am for the best light, fewest people, and a parking spot. Worth the early alarm.</p></div>
+      <div class="tip-card"><div class="tip-icon">👙</div><h3>Dark swimsuits for hot springs</h3><p>Iron-rich water at Furnas's hot springs permanently stains light-colored swimwear orange. This is a serious warning. Pack dark or old swimsuits specifically for hot spring days.</p></div>
+      <div class="tip-card"><div class="tip-icon">🌧️</div><h3>Always pack a rain layer</h3><p>Even on beautiful days, mountain temperatures drop and showers appear out of nowhere. A packable rain jacket is essential. Layers always.</p></div>
       <div class="tip-card"><div class="tip-icon">💶</div><h3>Carry cash</h3><p>Small villages, trail parking, and some local restaurants only accept cash. Get euros at an ATM in Ponta Delgada when you arrive.</p></div>
       <div class="tip-card"><div class="tip-icon">🚗</div><h3>Driving is easy</h3><p>Roads are well-maintained, GPS works perfectly, traffic is light. Mountain roads can be narrow — take them slowly. No toll roads on São Miguel.</p></div>
-      <div class="tip-card"><div class="tip-icon">🍽️</div><h3>Restaurants open late</h3><p>Most restaurants don't open for dinner until 6:30–7pm. Plan afternoon snacks if hunger strikes earlier.</p></div>
-      <div class="tip-card"><div class="tip-icon">💰</div><h3>Tipping culture</h3><p>Tipping is not obligatory in Portugal, but rounding up ~10% is always appreciated. Never expected, always welcomed.</p></div>
-      <div class="tip-card"><div class="tip-icon">📱</div><h3>Your US phone works</h3><p>Portugal is EU — most US plans include international data. Confirm with your carrier before leaving.</p></div>
+      <div class="tip-card"><div class="tip-icon">🍽️</div><h3>Restaurants open late</h3><p>Most restaurants don't open for dinner until 6:30–7pm. Don't show up at 6pm expecting to eat. Plan afternoon snacks if hunger strikes earlier.</p></div>
+      <div class="tip-card"><div class="tip-icon">💰</div><h3>Tipping culture</h3><p>Tipping is not obligatory in Portugal, but rounding up to the nearest 10% is always appreciated for good service. Never expected, always welcomed.</p></div>
+      <div class="tip-card"><div class="tip-icon">📱</div><h3>Your US phone works</h3><p>Portugal is EU — most US plans include international data. Confirm with your carrier before leaving. Google Maps works well across the island.</p></div>
     </div>
   </div>
 </section>
@@ -668,21 +775,25 @@
       <div class="pack-col">
         <h3>Nice to have</h3>
         <ul>
-          <li><div class="pack-dot"></div>Azores webcam app</li>
-          <li><div class="pack-dot"></div>Google Translate (some menus are Portuguese-only)</li>
+          <li><div class="pack-dot"></div>Azores webcam app (check before drives)</li>
+          <li><div class="pack-dot"></div>Google Translate (some menus Portuguese-only)</li>
           <li><div class="pack-dot"></div>Light insect repellent (forests)</li>
           <li><div class="pack-dot"></div>Waterproof bag or dry bag</li>
           <li><div class="pack-dot"></div>Snacks for long drives</li>
           <li><div class="pack-dot"></div>Camera / good phone camera</li>
           <li><div class="pack-dot"></div>Motion sickness medication (boat days)</li>
+          <li><div class="pack-dot"></div>Ibuprofeno (pharmacies everywhere if needed)</li>
           <li><div class="pack-dot"></div>Extra memory card / portable charger</li>
           <li><div class="pack-dot"></div>Travel adapter — Type F plug (see below)</li>
         </ul>
       </div>
     </div>
-    <div class="intro-note" style="margin-top:24px;display:flex;gap:14px;align-items:flex-start;">
-      <div style="font-size:28px;line-height:1;flex-shrink:0;">🔌</div>
-      <div><strong>Power adapters — everyone needs one</strong><br>Portugal uses <strong>Type F plugs</strong> — two round pins, 230V / 50Hz. US plugs will not fit. Pick up a Type F or universal travel adapter before you leave. All modern phones, laptops, and camera chargers are dual-voltage (100–240V) — check your power brick. One adapter per person is ideal.</div>
+    <div class="intro-note" style="margin-top: 24px; display: flex; gap: 14px; align-items: flex-start;">
+      <div style="font-size: 28px; line-height:1; flex-shrink:0;">🔌</div>
+      <div>
+        <strong>Power adapters — everyone needs one</strong><br>
+        Portugal uses <strong>Type F plugs</strong> — two round pins, 230V / 50Hz. US plugs will not fit. Pick up a Type F adapter or universal travel adapter before you leave. All modern phones, laptops, and camera chargers are dual-voltage (100–240V), so you only need the plug adapter — check your device's power brick. One adapter per person is ideal; a multi-port USB hub + one adapter works well for shared rooms.
+      </div>
     </div>
   </div>
 </section>
@@ -694,17 +805,11 @@
 </div>
 
 <script>
-function toggleCard(headEl) {
-  headEl.closest('.act-card').classList.toggle('open');
-}
-
-function doFilter(tag, btn) {
-  document.querySelectorAll('.filt-btn').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  document.querySelectorAll('.act-card').forEach(card => {
-    const tags = card.dataset.tags || '';
-    card.classList.toggle('hide', tag !== 'all' && !tags.includes(tag));
-  });
+function showDay(id, el) {
+  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
 }
 </script>
 </body>
